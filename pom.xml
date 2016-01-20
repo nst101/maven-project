@@ -63,28 +63,28 @@
 				</executions>
 			</plugin>
 			<plugin>
-    <groupId>org.mule.tools.maven</groupId>
-    <artifactId>mule-maven-plugin</artifactId>
-    <version>2.0</version>
-    <configuration>
-        <deploymentType>cloudhub</deploymentType>
-        <muleVersion>3.7.2</muleVersion> 
-        <username>nst101-1</username>
-        <password>MyP@$$word1</password>
-	 <workerType>Micro</workerType>
-        <redeploy>true</redeploy>
-        <environment>Production</environment>
-    </configuration>
-    <executions>
-        <execution>
-            <id>deploy</id>
-            <phase>deploy</phase>
-            <goals>
-                <goal>deploy</goal>
-            </goals>
-        </execution>
-    </executions>
-</plugin>
+    			<groupId>org.mule.tools.maven</groupId>
+    			<artifactId>mule-maven-plugin</artifactId>
+    			<version>2.0</version>
+    			<configuration>
+        			<deploymentType>cloudhub</deploymentType>
+        			<muleVersion>3.7.2</muleVersion> 
+        			<username>nst101-1</username>
+        			<password>MyP@$$word1</password>
+					<workerType>Micro</workerType>
+        			<redeploy>true</redeploy>
+        			<environment>Production</environment>
+    			</configuration>
+    			<executions>
+        			<execution>
+            			<id>deploy</id>
+           				<phase>deploy</phase>
+            			<goals>
+                			<goal>deploy</goal>
+            			</goals>
+        			</execution>
+    			</executions>
+			</plugin>
 		</plugins>
 	</build>
 
