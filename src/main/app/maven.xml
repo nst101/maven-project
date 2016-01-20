@@ -35,6 +35,7 @@ http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/jso
 			path="/hello" doc:name="HTTP" />
 		<set-payload value="Hello Maven" doc:name="Set Payload" />
 	</flow>
+	
 	<flow name="retrieveFlights">
 		<http:listener config-ref="HTTP_Listener_Configuration"
 			path="/flights" doc:name="HTTP" />
@@ -43,12 +44,15 @@ http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/jso
 		</db:select>
 		<json:object-to-json-transformer
 			doc:name="Object to JSON" />
+        <logger level="INFO" doc:name="Logger"/>
 		<jms:outbound-endpoint queue="flights"
 			connector-ref="Active_MQ" doc:name="JMS" />
 	</flow>
+	
 	<flow name="logFlights">
 		<jms:inbound-endpoint queue="flights"
 			connector-ref="Active_MQ" doc:name="JMS" />
 		<logger message="#[payload]" level="INFO" doc:name="Logger" />
 	</flow>
+	
 </mule>
